@@ -1,0 +1,10 @@
+<h3>Wikinimous</h3>
+<%= link_to 'Create Article', articles_new_path %>
+<br>
+<br>
+<br>
+
+<% @articles.each do |article| %>
+  <h2><%= link_to article.title, show_path(article)%></h2>
+  <p><%= truncate(article.content, length: 30) %></p>
+<% end %>
